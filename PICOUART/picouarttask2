@@ -1,0 +1,29 @@
+import serial
+import time
+
+try:
+    ser = serial.Serial('COM3', 115200, rtscts=False, dsrdtr=False, timeout=1)
+    print("Connected to Pico")
+except serial.SerialException as e:
+    print("Connection failed:", e)
+    exit()
+
+while True:
+    
+    message = input("Enter: ")
+    message += "\n"
+    c=0
+    for i in message:
+        if i=='#':
+            c+=1
+    ser.write(message.encode('utf-8'))  
+    ser.flush() 
+
+    time.sleep(0.1) 
+    #print(c)
+    if ser.in_waiting:
+        for j in range(0,c+1):
+            data = ser.readline().decode('utf-8').strip() 
+            print(j+1," : ", data)
+
+ser.close()
