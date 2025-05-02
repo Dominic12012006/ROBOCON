@@ -38,7 +38,7 @@ obj_points_3D = []  # 3d point in real world space
 img_points_2D = []  # 2d points in image plane
 
 # The images directory path
-image_dir_path = "imagesanubhav"
+image_dir_path = "imageslogi"
 
 files = os.listdir(image_dir_path)  # list of names of all the files present
 for file in files:
@@ -65,7 +65,7 @@ print("calibrated")
 
 print("dumping the data into one files using numpy ")
 np.savez(
-    f"{calib_data_path}/MultiMatrixanubhav",
+    f"{calib_data_path}/MultiMatrixlogipytg",
     camMatrix=mtx,
     distCoef=dist,
     rVector=rvecs,

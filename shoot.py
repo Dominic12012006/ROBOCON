@@ -23,7 +23,7 @@ xoffset = 0
 
 
 model = YOLO(r'C:\Users\Happy Home\OneDrive\Desktop\ROBOCON\best.pt') 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 # cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("Cannot open camera")

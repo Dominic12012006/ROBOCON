@@ -19,7 +19,7 @@ def rvec_to_euler(rvec):
     return np.degrees([x, y, z])
 
 
-calib_data_path = r"C:\Users\Happy Home\OneDrive\Desktop\ROBOCON\MultiMatrixanubhav.npz"
+calib_data_path = r"C:\Users\Happy Home\OneDrive\Desktop\ROBOCON\MultiMatrixlogi.npz"
 
 calib_data = np.load(calib_data_path)
 print(calib_data.files)
@@ -28,9 +28,9 @@ dist_coef = calib_data["distCoef"]
 r_vectors = calib_data["rVector"]
 t_vectors = calib_data["tVector"]
 
-MARKER_SIZE = 20.1 #cm
+MARKER_SIZE = 28.1 #cm
 
-marker_dict = aruco.getPredefinedDictionary(aruco.DICT_4X4_50)
+marker_dict = aruco.getPredefinedDictionary(aruco.DICT_6X6_50)
 
 param_markers = aruco.DetectorParameters()
 
@@ -77,6 +77,7 @@ while True:
             distance = np.sqrt(
                 tVec[i][0][2] ** 2 + tVec[i][0][0] ** 2 + tVec[i][0][1] ** 2
             )
+            
 
 
 

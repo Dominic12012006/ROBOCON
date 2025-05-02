@@ -10,8 +10,8 @@ camera_matrix = calib_data['camMatrix']
 dist_coeffs = calib_data['distCoef']
 
 
-model = YOLO(r'C:\Users\Happy Home\OneDrive\Desktop\ROBOCON\best.pt') 
-cap = cv2.VideoCapture(1)
+model = YOLO(r'C:\Users\Happy Home-\OneDrive\Desktop\ROBOCON\best.pt') 
+cap = cv2.VideoCapture(0)
 # cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("Cannot open camera")
