@@ -3,7 +3,7 @@ import numpy
 import math
 import cv2
 
-model = YOLO(r'C:\Users\Happy Home\OneDrive\Desktop\ROBOCON\best.pt') 
+model = YOLO(r'm_hoop.pt') 
 cap = cv2.VideoCapture(0)
 # cap = cv2.VideoCapture(0)
 if not cap.isOpened():
@@ -49,8 +49,8 @@ while True:
                 s = "safe" if -3 < xoffset < 3 else "unsafe"
                 cv2.putText(frame, s, (320, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 3)
                 cv2.putText(frame, str(const), (500, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 3)
-                # cv2.putText(frame, str(confidence), (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 3)
-                cv2.putText(frame, str(xoffset), (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 3)
+                cv2.putText(frame, str(confidence), (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 3)
+                # cv2.putText(frame, str(xoffset), (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 3)
 
     
     cv2.imshow("distance", frame)
