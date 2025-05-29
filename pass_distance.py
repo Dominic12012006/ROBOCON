@@ -28,7 +28,7 @@ dist_coef = calib_data["distCoef"]
 r_vectors = calib_data["rVector"]
 t_vectors = calib_data["tVector"]
 
-MARKER_SIZE = 28.1 #cm
+MARKER_SIZE = 5.9 #cm
 
 marker_dict = aruco.getPredefinedDictionary(aruco.DICT_6X6_50)
 
@@ -37,7 +37,7 @@ param_markers = aruco.DetectorParameters()
 # cap = cv.VideoCapture(1)
 # cap = cv.VideoCapture('http://192.0.0.4:8080/video') #give the server id shown in IP webcam App 
 
-cap = cv.VideoCapture(1)
+cap = cv.VideoCapture(0)
 
 # Optional: Set resolution (ZED stereo image is usually wide)
 # cap.set(cv.CAP_PROP_FRAME_WIDTH, 3840)   # 1280 x 2
